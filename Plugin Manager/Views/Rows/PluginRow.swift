@@ -9,12 +9,25 @@ import SwiftUI
 
 struct PluginRow: View {
     
+    @Environment(PluginsObservable.self) private var pluginsObservable
     var plugin: Plugins.Plugin
     
     var body: some View {
         VStack(spacing: 12) {
             Group {
-                Text(plugin.name)
+                HStack {
+                    Text(plugin.name)
+                        .bold()
+                        .font(.system(size: 14))
+                    if let status = pluginsObservable.getInstallStatus(id: plugin.installStatus) {
+                        Text(status)
+                            .padding(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 18)
+                                    .stroke(.gray, lineWidth: 1.5)
+                            )
+                    }
+                }
                 Text("Version: \(plugin.version)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)

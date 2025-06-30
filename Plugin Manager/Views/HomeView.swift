@@ -25,6 +25,7 @@ struct HomeView: View {
                 if let plugins = pluginsObservable.plugins {
                     List(plugins.plugins) { plugin in
                         PluginRow(plugin: plugin)
+                            .environment(pluginsObservable)
                     }
                 }
             }

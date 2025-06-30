@@ -20,4 +20,12 @@ class PluginsObservable {
             self.plugins = try? JSONDecoder().decode(Plugins.self, from: data)
         }
     }
+    
+    func getInstallStatus(id: Int) -> String? {
+        guard let plugins else { return nil }
+        guard let installStatus = plugins.installStatus.first(where: {
+            $0.id == id
+        }) else { return nil }
+        return installStatus.status
+    }
 }
