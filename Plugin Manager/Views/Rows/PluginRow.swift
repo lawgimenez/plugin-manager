@@ -29,6 +29,16 @@ struct PluginRow: View {
                     }
                 }
                 Text("Version: \(plugin.version)")
+                Button {
+                    
+                } label: {
+                    HStack {
+                        Text("Details")
+                    }
+                    .padding(8)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .shadow(color: Color(.black).opacity(0.1), radius: 3, x: 0, y: 4)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
