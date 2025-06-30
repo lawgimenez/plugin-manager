@@ -18,7 +18,6 @@ class PluginsObservable {
         }
         if let data = try? Data(contentsOf: url) {
             self.plugins = try? JSONDecoder().decode(Plugins.self, from: data)
-            print("Plugins: \(self.plugins)")
         }
     }
 }
