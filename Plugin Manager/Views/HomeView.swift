@@ -26,7 +26,11 @@ struct HomeView: View {
                     List(plugins.plugins) { plugin in
                         PluginRow(plugin: plugin)
                             .environment(pluginsObservable)
+                            
+                            .listRowSeparator(.hidden)
                     }
+                    .scrollContentBackground(.hidden)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(.khakiDark), Color(.khakiPrimary)]), startPoint: .top, endPoint: .bottom))
                 }
             }
             .toolbar {
@@ -43,6 +47,7 @@ struct HomeView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(.khakiDark), Color(.khakiPrimary)]), startPoint: .top, endPoint: .bottom))
         }
         .task {
             await pluginsObservable.parseData()
