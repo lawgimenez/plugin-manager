@@ -12,14 +12,26 @@ struct HomeView: View {
     @State private var pluginsObservable = PluginsObservable()
     
     var body: some View {
-        VStack {
-            if let plugins = pluginsObservable.plugins {
-                List(plugins.plugins) { plugin in
-                    PluginRow(plugin: plugin)
+        NavigationStack {
+            VStack {
+                if let plugins = pluginsObservable.plugins {
+                    List(plugins.plugins) { plugin in
+                        PluginRow(plugin: plugin)
+                    }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        
+                    } label: {
+                        Text("Sync")
+                            .bold()
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
             await pluginsObservable.parseData()
         }
