@@ -1,0 +1,78 @@
+{
+	"plugins": [
+		{
+			"id": 1,
+			"name": "MotionVFX",
+			"version": "1.2.3",
+			"install_status": 1
+		},
+		{
+			"id": 2,
+			"name": "PixelStudios",
+			"version": "1.2",
+			"install_status": 1
+		},
+		{
+			"id": 3,
+			"name": "FCPX",
+			"version": "2.3",
+			"install_status": 2
+		},
+		{
+			"id": 4,
+			"name": "mTracker3D",
+			"version": "0.2",
+			"install_status": 5
+		},
+		{
+			"id": 5,
+			"name": "CoreMelt SliceX",
+			"version": "10.2",
+			"install_status": 1
+		},
+		{
+			"id": 6,
+			"name": "Gyro",
+			"version": "11.5",
+			"install_status": 3
+		},
+		{
+			"id": 7,
+			"name": "FX FX",
+			"version": "4.4",
+			"install_status": 1
+		},
+		{
+			"id": 8,
+			"name": "Leno FX",
+			"version": "1.2443",
+			"install_status": 5
+		}
+	],
+	"install_status": [
+		{
+			"id": 1,
+			"status": "Installed"
+		},
+		{
+			"id": 2,
+			"status": "Uninstalled"
+		},
+		{
+			"id": 3,
+			"status": "Downloading"
+		}, 
+		{
+			"id": 4,
+			"status": "Failed"
+		},
+		{
+			"id": 5,
+			"status": "Cancelled"
+		},
+		{
+			"id": 2,
+			"status": "Downloaded"
+		}
+	]
+}
