@@ -13,7 +13,11 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            
+            if let plugins = pluginsObservable.plugins {
+                List(plugins.plugins) { plugin in
+                    PluginRow(plugin: plugin)
+                }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
