@@ -13,8 +13,11 @@ struct PluginRow: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            Text(plugin.name)
-            Text("Version: \(plugin.version)")
+            Group {
+                Text(plugin.name)
+                Text("Version: \(plugin.version)")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding()
     }
