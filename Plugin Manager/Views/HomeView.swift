@@ -37,6 +37,7 @@ struct HomeView: View {
                         timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                     } label: {
                         Text("Sync")
+                            .padding([.leading, .trailing], 15)
                             .bold()
                     }
                 }
